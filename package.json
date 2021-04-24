@@ -6,16 +6,22 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@sap/audit-logging": "^5.0.0",
     "@sap/cds": "^4",
+    "@sap/hana-client": "^2.7",
+    "@sap/hdbext": "^7.1.4",
+    "@sap/xsenv": "^3.1.0",
+    "@sap/xssec": "^3.1.2",
     "express": "^4",
-    "@sap/hana-client": "^2.7"
+    "passport": "^0.4.1",
+    "sap-hdbext-promisfied": "^2.202104.1"
   },
   "devDependencies": {
     "@sap/ux-specification": "^1.84.7",
     "sqlite3": "^5.0.2"
   },
   "scripts": {
-    "start": "cds run"
+    "start": "NODE_ENV=production cds run"
   },
   "cds": {
     "build": {
@@ -27,6 +33,9 @@
     "requires": {
       "db": {
         "kind": "hana"
+      },
+      "uaa": {
+        "kind": "xsuaa"
       }
     }
   },
